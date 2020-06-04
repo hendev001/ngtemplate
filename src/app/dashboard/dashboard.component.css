@@ -1,0 +1,9 @@
+mat-card {
+    padding: 50px;
+    margin: 2px;
+    background: #3F51B5;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+}

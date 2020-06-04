@@ -1,0 +1,16 @@
+<!-- <div class="cardList" fxLayout="column" fxLayoutGap="32px">
+    <mat-card></mat-card>
+    <mat-card></mat-card>
+    <mat-card></mat-card>
+</div>
+
+<mat-divider></mat-divider> -->
+
+
+
+
+<div fxLayout="row wrap" fxLayoutGap="22px" fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let _ of [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <mat-card fxFlex="0 1 calc(33.3% - 32px)">{{_}}</mat-card>
+    </ng-container>
+</div>

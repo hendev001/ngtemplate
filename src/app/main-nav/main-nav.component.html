@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar color="primary">
+            <img src="../../assets/dev.png" alt="" style="width: 65px; height: 55px; margin-left: 14px;">
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item href="#"> <i class="material-icons">
+          assessment
+        </i> Dashboard</a>
+            <a mat-list-item href="#"><i class="material-icons">
+          person
+        </i> Users</a>
+            <a mat-list-item href="#">
+                <i class="material-icons">
+          event_note
+        </i> Projects</a>
+            <a mat-list-item href="#"></a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="background: #fff;">
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span>Devlogger</span>
+            <!--adding ddl for login start-->
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="position: absolute; right: 0; margin-right: 15px;">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+                <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+                <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+            </mat-menu>
+            <!--adding ddl for login end-->
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <h1>Hello Content</h1>
+        <app-dashboard></app-dashboard>
+    </mat-sidenav-content>
+</mat-sidenav-container>
